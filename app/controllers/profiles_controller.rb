@@ -26,6 +26,7 @@ class ProfilesController < ApplicationController
 
   # PATCH/PUT /profiles/1
   def update
+    
     if @profile.update(profile_params)
       render json: @profile
     else
@@ -46,6 +47,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def profile_params
-      params.require(:profile).permit(:game, :ranking)
+      params.require(:profile).permit(:game, :gamer_id, :high_score)
     end
 end
